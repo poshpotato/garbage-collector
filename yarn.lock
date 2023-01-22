@@ -1734,7 +1734,7 @@ eslint-config-prettier@^8.3.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
   integrity sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==
 
-eslint-plugin-libram@^0.2.25:
+eslint-plugin-libram@^0.2.26:
   version "0.2.26"
   resolved "https://registry.yarnpkg.com/eslint-plugin-libram/-/eslint-plugin-libram-0.2.26.tgz#dd7e615d9daea8d3ccc2a9f378897fa8c0e42275"
   integrity sha512-z1v9bu2p+ICw84JmT8Ha10b9zq77V1ndMjEiJfZxv5RqrPmzHzGVcoGpYOneUqK+6kaAh9tRcry+4I5O05JUEg==
