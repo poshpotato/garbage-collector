@@ -24,4 +24,4 @@ function designerSweatpantsValue(mode: BonusEquipMode): number {
 }
 
 const designerSweatpants = { item: $item`designer sweatpants`, value: designerSweatpantsValue };
-export default (mode: BonusEquipMode): [Item, number][] => toBonus(designerSweatpants, mode);
+export default (mode: BonusEquipMode): [Item, number] | null => toBonus(designerSweatpants, mode);

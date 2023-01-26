@@ -52,11 +52,11 @@ export type BonusGear = {
   value: (mode: BonusEquipMode) => number;
 };
 
-export function toBonus({ item, value }: BonusGear, mode: BonusEquipMode): [Item, number][] {
-  if (!have(item) || !canEquip(item)) return [];
+export function toBonus({ item, value }: BonusGear, mode: BonusEquipMode): [Item, number] | null {
+  if (!have(item) || !canEquip(item)) return null;
   const val = value(mode);
-  if (!val) return [];
-  return [[item, val]];
+  if (!val) return null;
+  return [item, val];
 }
 
 export const waterBreathingEquipment = $items`The Crown of Ed the Undying, aerated diving helmet, crappy Mer-kin mask, Mer-kin gladiator mask, Mer-kin scholar mask, old SCUBA tank`;

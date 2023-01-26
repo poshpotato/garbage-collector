@@ -40,4 +40,4 @@ function valueCleaver(mode: BonusEquipMode): number {
   return juneCleaverEV / interval;
 }
 const juneCleaver = { item: JuneCleaver.cleaver, value: valueCleaver };
-export default (mode: BonusEquipMode): [Item, number][] => toBonus(juneCleaver, mode);
+export default (mode: BonusEquipMode): [Item, number] | null => toBonus(juneCleaver, mode);

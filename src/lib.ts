@@ -561,3 +561,8 @@ export function maxBy<S extends string | number | symbol, T extends { [x in S]: 
 }
 
 export type GarboItemLists = { Newark: string[]; "Feliz Navidad": string[]; trainset: string[] };
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export function nonNull<T extends {}>(arr: (T | null)[]): T[] {
+  return arr.filter((x): x is T => x !== null);
+}

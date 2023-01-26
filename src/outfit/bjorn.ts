@@ -54,14 +54,14 @@ export function pickBjorn(mode: BonusEquipMode): CrownOfThrones.FamiliarRider {
   return attempt;
 }
 
-export function bestBjornalike(existingForceEquips: Item[]): Item | undefined {
+export function bestBjornalike(existingForceEquips: Item[]): Item | null {
   const bjornalikes = $items`Buddy Bjorn, Crown of Thrones`;
   const slots = bjornalikes
     .map((bjornalike) => toSlot(bjornalike))
     .filter((slot) => !existingForceEquips.some((equipment) => toSlot(equipment) === slot));
-  if (!slots.length) return undefined;
+  if (!slots.length) return null;
   if (slots.length < 2 || bjornalikes.some((thing) => !have(thing))) {
-    return bjornalikes.find((thing) => have(thing) && slots.includes(toSlot(thing)));
+    return bjornalikes.find((thing) => have(thing) && slots.includes(toSlot(thing))) ?? null;
   }
 
   const hasStrongLep = findLeprechaunMultiplier(meatFamiliar()) >= 2;

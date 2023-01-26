@@ -1,5 +1,6 @@
 import { Item, myClass, setLocation, toSlot } from "kolmafia";
 import { $class, $item, $items, $location, $skill, $slot, getModifier, have } from "libram";
+import { nonNull } from "../../lib";
 import { garboAverageValue } from "../../session";
 import { BonusEquipMode, isFreeFight, meatValue, toBonus, VOA } from "../lib";
 
@@ -18,9 +19,11 @@ const powerGlove = {
 };
 
 export function bonusAccessories(mode: BonusEquipMode): [Item, number][] {
-  return [mafiaThumbRing, mrCheengsSpectacles, mrScreegesSpectacles, powerGlove]
-    .map((x) => toBonus(x, mode))
-    .flat(1);
+  return nonNull(
+    [mafiaThumbRing, mrCheengsSpectacles, mrScreegesSpectacles, powerGlove].map((x) =>
+      toBonus(x, mode)
+    )
+  );
 }
 
 let cachedUsingThumbRing: boolean | null = null;

@@ -39,4 +39,4 @@ function pantsgivingValue(): number {
 }
 
 const pantsgiving = { item: $item`Pantsgiving`, value: pantsgivingValue };
-export default (mode: BonusEquipMode): [Item, number][] => toBonus(pantsgiving, mode);
+export default (mode: BonusEquipMode): [Item, number] | null => toBonus(pantsgiving, mode);

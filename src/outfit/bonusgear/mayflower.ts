@@ -13,4 +13,4 @@ function valueMayflower(mode: BonusEquipMode): number {
   return dropValue + sporadicMeatValue;
 }
 const mayflower = { item: $item`Mayflower bouquet`, value: valueMayflower };
-export default (mode: BonusEquipMode): [Item, number][] => toBonus(mayflower, mode);
+export default (mode: BonusEquipMode): [Item, number] | null => toBonus(mayflower, mode);

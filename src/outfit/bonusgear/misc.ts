@@ -1,5 +1,6 @@
 import { equippedItem, Item, mallPrice } from "kolmafia";
 import { $item, $items, $slots, get, sum } from "libram";
+import { nonNull } from "../../lib";
 import { garboAverageValue, garboValue } from "../../session";
 import { BonusEquipMode, ignoreLimitedDrops, toBonus } from "../lib";
 
@@ -34,6 +35,8 @@ const stickerSword = { item: $item`scratch 'n' sniff sword`, value: stickerValue
 const stickerCrossbow = { item: $item`scratch 'n' sniff crossbow`, value: stickerValue };
 
 export default (mode: BonusEquipMode): [Item, number][] =>
-  [pantogramPants, bagOfManyConfections, snowSuit, stickerSword, stickerCrossbow]
-    .map((x) => toBonus(x, mode))
-    .flat(1);
+  nonNull(
+    [pantogramPants, bagOfManyConfections, snowSuit, stickerSword, stickerCrossbow].map((x) =>
+      toBonus(x, mode)
+    )
+  );
